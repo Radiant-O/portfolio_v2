@@ -16,8 +16,19 @@
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6">
           Hi, I'm <span class="text-primary-600 dark:text-primary-400">Radiant</span>
         </h1>
+        <!-- <div class="text-2xl sm:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300 mb-8">
+      <span>An </span>
+      <span class="text-primary-600 dark:text-primary-400 font-semibold">
+        <span class="typing-text"></span>
+      </span>
+      <span> crafting intelligent solutions and automated systems</span>
+    </div> -->
         <p class="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-          An AI Software Engineer crafting intelligent solutions and automated systems
+          <span>An </span>
+      <span class="text-primary-600 dark:text-primary-400 font-semibold">
+        <span class="typing-text"></span>
+      </span>
+      <span> crafting intelligent solutions and automated systems</span>
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button 
@@ -74,8 +85,10 @@ import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import TextPlugin from 'gsap/TextPlugin'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, TextPlugin)
+// gsap.registerPlugin(TextPlugin)
 
 const router = useRouter()
 
@@ -89,6 +102,12 @@ const iconClasses = [
   'fas fa-database fa-beat',
   'fas fa-cloud fa-bounce',
   'fas fa-cogs fa-spin'
+]
+
+const roles = [
+  'Software Engineer',
+  'Frontend Developer',
+  'AI Automation Expert'
 ]
 
 const backgroundIcons = ref([])
@@ -182,6 +201,44 @@ onMounted(() => {
   })
 })
 
+onMounted(() => {
+  let currentIndex = 0
+
+  const typeNextRole = () => {
+    const nextRole = roles[currentIndex]
+    
+    // First, clear the existing text
+    gsap.to('.typing-text', {
+      duration: 1.5,
+      text: {
+        value: '',
+        delimiter: ''
+      },
+      ease: 'none',
+      onComplete: () => {
+        // Then type the new text
+        gsap.to('.typing-text', {
+          duration: 2,
+          text: {
+            value: nextRole,
+            delimiter: ''
+          },
+          ease: 'none',
+          onComplete: () => {
+            // Pause at the end of typing
+            gsap.delayedCall(3, () => {
+              currentIndex = (currentIndex + 1) % roles.length
+              typeNextRole()
+            })
+          }
+        })
+      }
+    })
+  }
+
+  typeNextRole()
+})
+
 const scrollToSkills = () => {
   const skillsSection = document.getElementById('skills')
   if (skillsSection) {
@@ -208,9 +265,20 @@ const navigateToProjects = () => {
   isolation: isolate;
 }
 
-@media (max-width: 640px) {
+.typing-text {
+  border-right: 2px solid currentColor;
+  padding-right: 4px;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: currentColor; }
+}
+
+/* @media (max-width: 640px) {
   .floating-icon {
     display: none;
   }
-}
+} */
 </style>
