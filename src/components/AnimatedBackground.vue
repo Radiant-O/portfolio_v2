@@ -4,7 +4,7 @@
     <div v-for="icon in backgroundIcons" :key="icon.id" 
          class="floating-icon absolute"
          :style="{ left: icon.x + '%', top: icon.y + '%' }">
-      <i :class="icon.class" class="text-2xl sm:text-3xl opacity-20 dark:opacity-40"></i>
+      <i :class="icon.class" class="text-lg sm:text-2xl opacity-20 dark:opacity-40"></i>
     </div>
   </div>
 </template>
@@ -27,6 +27,8 @@ const iconClasses = [
 const backgroundIcons = ref([])
 
 const generateIcons = () => {
+  const iconCount = window.innerWidth < 640 ? 15 : 30
+
   backgroundIcons.value = Array.from({ length: 30 }, (_, i) => ({
     id: i,
     x: Math.random() * 100,
@@ -37,6 +39,8 @@ const generateIcons = () => {
 
 onMounted(() => {
   generateIcons()
+
+  window.addEventListener('resize', generateIcons)
 
   gsap.to('.floating-icon', {
     y: 'random(-200, 200)',
@@ -60,9 +64,4 @@ onMounted(() => {
   transform-style: preserve-3d;
 }
 
-@media (max-width: 640px) {
-  .floating-icon {
-    display: none;
-  }
-}
 </style>
