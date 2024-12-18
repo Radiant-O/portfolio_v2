@@ -83,7 +83,7 @@ onMounted(() => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div>
         <!-- Profile Section -->
-        <section class="mb-20">
+        <section>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="profile-content">
               <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
@@ -122,7 +122,7 @@ onMounted(() => {
         </section>
 
         <!-- Stats Section -->
-        <section class="stats-section py-16 mb-20">
+        <section class="stats-section py-16">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div
               v-for="(stat, index) in stats"
@@ -139,16 +139,6 @@ onMounted(() => {
           </div>
         </section>
 
-        <!-- Floating Icons Section -->
-        <!-- <section class="floating-icons-section">
-          <div class="flex justify-center space-x-6">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" class="w-12 h-12" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-12 h-12" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="w-12 h-12" />
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="w-12 h-12" />
-          </div>
-        </section> -->
 
         <!-- Experience Section -->
         <section class="experience-section">

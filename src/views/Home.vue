@@ -37,7 +37,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-8">
       <div class="absolute inset-0 bg-white/90 dark:bg-gray-700/30 backdrop-blur-sm"></div>
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 dark:text-white mb-16">

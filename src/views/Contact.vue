@@ -1,5 +1,6 @@
 <template>
-  <div class="min-h-screen py-20 bg-white dark:bg-gray-900">
+  <div class="min-h-screen py-20">
+    <AnimatedBackground />
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="text-center mb-16">
@@ -133,6 +134,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
+import AnimatedBackground from '../components/AnimatedBackground.vue'
 
 const formData = ref({
   name: '',
