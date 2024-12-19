@@ -12,35 +12,19 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <!-- Contact Info Cards -->
-        <div
-          v-for="info in contactInfo"
-          :key="info.title"
-          class="contact-card bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300"
-        >
-          <div class="text-4xl mb-4">{{ info.icon }}</div>
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            {{ info.title }}
-          </h3>
-          <a
-            :href="info.link"
-            class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200"
-          >
-            {{ info.value }}
-          </a>
-        </div>
-      </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
         <!-- Contact Form -->
-        <div class="contact-form bg-gray-50 dark:bg-gray-800 rounded-xl p-8 xl:col-span-2">
+        <div
+          class="contact-form bg-gray-50 dark:bg-gray-800 rounded-xl p-8 xl:col-span-2"
+        >
           <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Send Me a Message
           </h2>
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <div>
-              <label class="block text-gray-700 dark:text-gray-300 mb-2">Name</label>
+              <label class="block text-gray-700 dark:text-gray-300 mb-2"
+                >Name</label
+              >
               <input
                 v-model="formData.name"
                 type="text"
@@ -49,7 +33,9 @@
               />
             </div>
             <div>
-              <label class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+              <label class="block text-gray-700 dark:text-gray-300 mb-2"
+                >Email</label
+              >
               <input
                 v-model="formData.email"
                 type="email"
@@ -58,7 +44,9 @@
               />
             </div>
             <div>
-              <label class="block text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+              <label class="block text-gray-700 dark:text-gray-300 mb-2"
+                >Subject</label
+              >
               <input
                 v-model="formData.subject"
                 type="text"
@@ -67,7 +55,9 @@
               />
             </div>
             <div>
-              <label class="block text-gray-700 dark:text-gray-300 mb-2">Message</label>
+              <label class="block text-gray-700 dark:text-gray-300 mb-2"
+                >Message</label
+              >
               <textarea
                 v-model="formData.message"
                 required
@@ -93,148 +83,139 @@
           </form>
         </div>
 
-        <!-- Social Links & Map -->
-        <div class="space-y-8">
-          <!-- Social Links -->
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Connect With Me
-            </h2>
-            <div class="grid grid-cols-3 gap-4">
-              <a
-                v-for="link in socialLinks"
-                :key="link.name"
-                :href="link.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-link flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-lg hover:shadow-md transition-shadow duration-200"
-              >
-                <span class="text-3xl mb-2">{{ link.icon }}</span>
-                <span class="text-gray-700 dark:text-gray-300">{{ link.name }}</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Map -->
-          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 h-[300px]">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              Location
-            </h2>
-            <!-- Add your map component or iframe here -->
-            <div class="w-full h-full bg-gray-200 dark:bg-gray-700 rounded-lg">
-              <!-- Map placeholder -->
-            </div>
-          </div>
+ <!-- Contact Information -->
+<div class="space-y-8">
+  <!-- Direct Contact -->
+  <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-8">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+      Contact Information
+    </h2>
+    <div class="space-y-6">
+      <div v-for="info in contactInfo" 
+           :key="info.title"
+           class="flex items-center p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+        <div class="w-12 h-12 flex items-center justify-center bg-primary-100 dark:bg-primary-900 rounded-full">
+          <i :class="[info.icon, 'text-xl text-primary-600 dark:text-primary-400']"></i>
         </div>
+        <div class="ml-4 min-w-0"> <!-- Added min-w-0 to allow text truncation -->
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ info.title }}</h3>
+          <a :href="info.link" 
+             class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 block truncate">
+            {{ info.displayValue }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import gsap from 'gsap'
-import AnimatedBackground from '../components/AnimatedBackground.vue'
+import { ref, onMounted } from "vue";
+import gsap from "gsap";
+import AnimatedBackground from "../components/AnimatedBackground.vue";
 
 const formData = ref({
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
-})
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
 
-const isSubmitting = ref(false)
-const showSuccess = ref(false)
+const isSubmitting = ref(false);
+const showSuccess = ref(false);
 
 const contactInfo = ref([
   {
-    icon: '📧',
-    title: 'Email',
-    value: 'contact@example.com',
-    link: 'mailto:contact@example.com'
+    icon: "fas fa-envelope",
+    title: "Email",
+    value: "bukoyeabiodunisrael@gmail.com",
+    link: "mailto:bukoyeabiodunisrael@gmail.com",
+    displayValue: "bukoyeabiodunisrael@gmail.com"
   },
   {
-    icon: '📱',
-    title: 'Phone',
-    value: '+1 234 567 890',
-    link: 'tel:+1234567890'
-  },
-  {
-    icon: '📍',
-    title: 'Location',
-    value: 'New York, NY',
-    link: 'https://maps.google.com'
+    icon: "fab fa-whatsapp",
+    title: "WhatsApp",
+    value: "Chat on WhatsApp",
+    link: "https://wa.me/2347063197389",
+    displayValue: "Chat on WhatsApp"
   }
-])
+]);
 
 const socialLinks = ref([
   {
-    name: 'GitHub',
-    url: 'https://github.com/yourusername',
-    icon: '🐱'
+    icon: "fab fa-github",
+    title: "GitHub",
+    link: "https://github.com/radiant-O",
   },
   {
-    name: 'LinkedIn',
-    url: 'https://linkedin.com/in/yourusername',
-    icon: '💼'
+    icon: "fab fa-linkedin",
+    title: "LinkedIn",
+    link: "https://linkedin.com/in/your-profile",
   },
   {
-    name: 'Twitter',
-    url: 'https://twitter.com/yourusername',
-    icon: '🐦'
-  }
-])
-
+    icon: "fab fa-twitter",
+    title: "Twitter",
+    link: "https://twitter.com/your-handle",
+  },
+  {
+    icon: "fab fa-dev",
+    title: "Dev.to",
+    link: "https://dev.to/your-profile",
+  },
+]);
 const handleSubmit = async () => {
-  isSubmitting.value = true
-  
+  isSubmitting.value = true;
+
   // Simulate form submission
-  await new Promise(resolve => setTimeout(resolve, 1500))
-  
-  showSuccess.value = true
-  isSubmitting.value = false
-  
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+
+  showSuccess.value = true;
+  isSubmitting.value = false;
+
   // Reset form
   formData.value = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  }
-  
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
+
   // Hide success message after 3 seconds
   setTimeout(() => {
-    showSuccess.value = false
-  }, 3000)
-}
+    showSuccess.value = false;
+  }, 3000);
+};
 
 onMounted(() => {
   // Animate contact info cards
-  gsap.from('.contact-card', {
+  gsap.from(".contact-card", {
     opacity: 0,
     y: 30,
     duration: 0.8,
     stagger: 0.2,
-    ease: 'power3.out'
-  })
+    ease: "power3.out",
+  });
 
   // Animate form
-  gsap.from('.contact-form', {
+  gsap.from(".contact-form", {
     opacity: 0,
     x: 50,
     duration: 1,
-    ease: 'power3.out'
-  })
+    ease: "power3.out",
+  });
 
   // Animate social links
-  gsap.from('.social-link', {
+  gsap.from(".social-link", {
     opacity: 0,
     y: 20,
     duration: 0.6,
     stagger: 0.1,
-    ease: 'power3.out',
-    delay: 0.5
-  })
-})
-
+    ease: "power3.out",
+    delay: 0.5,
+  });
+});
 </script>

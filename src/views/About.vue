@@ -5,31 +5,38 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AnimatedBackground from '../components/AnimatedBackground.vue'
 
 const stats = ref([
-  { label: 'Years Experience', value: '5+' },
-  { label: 'Projects Completed', value: '50+' },
-  { label: 'Satisfied Clients', value: '30+' },
-  { label: 'Technologies', value: '15+' }
+  { label: 'Years Experience', value: '3+' },
+  { label: 'Projects Completed', value: '30+' },
+  { label: 'Satisfied Clients', value: '18+' },
+  { label: 'Technologies', value: '10+' }
 ])
 
 const experiences = ref([
   {
-    role: 'Senior Frontend Developer',
-    company: 'Tech Solutions Inc.',
-    period: '2021 - Present',
+    role: 'Frontend Developer',
+    company: 'iSalesBook',
+    period: '2024',
     description: 'Leading frontend development team, implementing modern web solutions using Vue.js, React, and other cutting-edge technologies.'
   },
   {
-    role: 'Frontend Developer',
-    company: 'Digital Innovations',
-    period: '2019 - 2021',
-    description: 'Developed responsive web applications and maintained existing client projects using Vue.js and related technologies.'
+    role: 'Lead Frontend Engineer',
+    company: 'PaddleTech',
+    period: '2022 - 2023',
+    description: 'Developed responsive web applications and maintained existing client projects using Reactjs and related technologies.'
   },
   {
-    role: 'Web Developer',
-    company: 'Creative Agency',
-    period: '2018 - 2019',
-    description: 'Created engaging web experiences for various clients, focusing on responsive design and user experience.'
+    role: 'Frontend Developer',
+    company: 'RugField Health Technologies',
+    period: '2022 - 2023',
+    description: 'Implemented complex web solutions, ensuring optimal user experience and performance using Reactjs and related technologies.'
+  },
+  {
+    role: 'AI Automation Engineer',
+    company: 'CodeSphereAI',
+    period: '2024',
+    description: 'Developed sophisticated AI automation systems, automating workflows and boosting efficiency using chatbot and Voice Assistants.'
   }
+
 ])
 
 onMounted(() => {
@@ -90,22 +97,22 @@ onMounted(() => {
                 About Me
               </h1>
               <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                Hello! I'm Radiant, a passionate frontend developer with a keen eye for creating beautiful and functional web experiences. With over 5 years of experience in web development, I specialize in building responsive, user-friendly applications using modern technologies.
+                Hello! I'm Abiodun Bukoye, a passionate Frontend Engineer with expertise in building modern web applications. With over 3 years of experience, I specialize in creating responsive, user-friendly interfaces using Vue.js, React, and React Native. I combine my technical skills with creative problem-solving to deliver exceptional digital solutions.
               </p>
-              <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                My journey in web development started with a curiosity for creating interactive user interfaces. Today, I combine my technical expertise with creative problem-solving to deliver exceptional digital solutions.
+              <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                Beyond frontend development, I'm deeply involved in AI automation, crafting sophisticated systems with chatbots and voice assistants to streamline workflows. I also share my knowledge through technical writing, creating comprehensive documentation and tutorials that make complex topics accessible to others.
               </p>
-              <div class="flex space-x-4">
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="#contact"
-                  class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors duration-200"
+                  class="w-full sm:w-auto px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white hover:text-white rounded-lg transition-colors duration-200 text-center"
                 >
                   Get in Touch
                 </a>
                 <a
                   href="/resume.pdf"
                   target="_blank"
-                  class="px-6 py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-400 dark:hover:text-gray-900 rounded-lg transition-colors duration-200"
+                  class="w-full sm:w-auto px-6 py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-400 dark:hover:text-gray-900 rounded-lg transition-colors duration-200 text-center"
                 >
                   Download CV
                 </a>
@@ -113,7 +120,7 @@ onMounted(() => {
             </div>
             <div class="profile-image">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                src="https://res.cloudinary.com/din5vdwsr/image/upload/v1734551944/radiant_olfitu.png"
                 alt="Profile"
                 class="w-full h-[500px] object-cover rounded-lg shadow-xl mt-10"
               />

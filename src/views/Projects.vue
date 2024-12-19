@@ -1,78 +1,86 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import gsap from 'gsap'
-import AnimatedBackground from '../components/AnimatedBackground.vue'
+import { ref, onMounted } from "vue";
+import gsap from "gsap";
+import AnimatedBackground from "../components/AnimatedBackground.vue";
 
 const projects = ref([
   {
-    title: 'E-commerce Platform',
-    description: 'A modern e-commerce platform built with Vue.js and Tailwind CSS, featuring a responsive design and seamless checkout process.',
-    image: 'https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    tags: ['Vue.js', 'Tailwind CSS', 'Node.js'],
-    link: 'https://project1.com'
+    title: "CodeSphereAI Website",
+    description:
+      "A modern agency website with responsive design and interactive features, built using Vue.js, VueMotion and Tailwind CSS.",
+    image:
+      "https://res.cloudinary.com/din5vdwsr/image/upload/v1734551897/csai_h6ofdl.png",
+    tags: ["Vue.js", "Tailwind CSS", "Node.js"],
+    link: "https://codesphereai.com",
   },
   {
-    title: 'Portfolio Website',
-    description: 'A creative portfolio website with smooth animations and interactive elements, built using Vue.js and GSAP.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80',
-    tags: ['Vue.js', 'GSAP', 'Tailwind CSS'],
-    link: 'https://project2.com'
+    title: "Tomilison Website",
+    description:
+      "A creative portfolio website for a law agency with smooth animations and interactive elements, built using Vue.js and GSAP.",
+    image:
+      "https://res.cloudinary.com/din5vdwsr/image/upload/v1734551907/tomlison_hygaxq.png",
+    tags: ["Wix"],
+    link: "https://www.tomilison.com",
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates and team collaboration features.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    tags: ['Vue.js', 'Firebase', 'Vuex'],
-    link: 'https://project3.com'
+    title: "EaseSpace",
+    description:
+      "A comprehensive wellness platform designed to help users achieve mental peace and well-being through meditation and breathing exercises.",
+    image:
+      "https://res.cloudinary.com/din5vdwsr/image/upload/v1734608900/ease_n5fokt.png",
+    tags: ["Vue.js", "Firebase", "Vuex, Bootstrap"],
+    link: "https://easespace.netlify.app",
   },
   {
-    title: 'Weather Dashboard',
-    description: 'A weather dashboard that displays current weather conditions and forecasts using modern visualization techniques.',
-    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    tags: ['Vue.js', 'D3.js', 'API Integration'],
-    link: 'https://project4.com'
-  }
-])
+    title: "Unique Telecom",
+    description:
+      "A Simple Telecommunication website for buying and selling telecom services.",
+    image:
+      "https://res.cloudinary.com/din5vdwsr/image/upload/v1734551897/uniq_hqa7pq.png",
+    tags: ["React", "Nodejs", "MongoDB", "TailwindCSS"],
+    link: "https://unique-telecom.vercel.app/",
+  },
+]);
 
-const selectedProject = ref(null)
-const isModalOpen = ref(false)
+const selectedProject = ref(null);
+const isModalOpen = ref(false);
 
 const openModal = (project) => {
-  selectedProject.value = project
-  isModalOpen.value = true
-}
+  selectedProject.value = project;
+  isModalOpen.value = true;
+};
 
 const closeModal = () => {
-  isModalOpen.value = false
+  isModalOpen.value = false;
   setTimeout(() => {
-    selectedProject.value = null
-  }, 300)
-}
+    selectedProject.value = null;
+  }, 300);
+};
 
 onMounted(() => {
   // Header animation
-  gsap.from('.projects-header', {
+  gsap.from(".projects-header", {
     opacity: 0,
     y: -30,
     duration: 1,
-    ease: 'power3.out'
-  })
+    ease: "power3.out",
+  });
 
   // Projects grid animation
-  gsap.from('.project-card', {
+  gsap.from(".project-card", {
     opacity: 0,
     y: 50,
     duration: 0.8,
     stagger: 0.2,
-    ease: 'power3.out'
-  })
-})
+    ease: "power3.out",
+  });
+});
 </script>
 
 <template>
   <div class="relative min-h-screen py-20 bg-white dark:bg-gray-900">
     <AnimatedBackground />
-    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
       <div class="projects-header text-center mb-16">
@@ -99,22 +107,26 @@ onMounted(() => {
               :alt="project.title"
               class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
             />
-            <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
-            
+            <div
+              class="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300"
+            ></div>
+
             <!-- Hover Content -->
-            <div class="absolute inset-0 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div
+              class="absolute inset-0 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
               <h3 class="text-2xl font-bold text-white mb-2">
                 {{ project.title }}
               </h3>
-              <p class="text-white text-center px-6">
-                Click to view details
-              </p>
+              <p class="text-white text-center px-6">Click to view details</p>
             </div>
           </div>
 
           <!-- Project Info -->
           <div class="p-6 bg-white dark:bg-gray-800">
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            <h3
+              class="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+            >
               {{ project.title }}
             </h3>
             <div class="flex flex-wrap gap-2 mb-4">
@@ -140,10 +152,15 @@ onMounted(() => {
         :class="{ 'opacity-0': !isModalOpen }"
         @click.self="closeModal"
       >
-        <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+        <div
+          class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"
+        ></div>
         <div
           class="relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-3xl w-full transform transition-all duration-300"
-          :class="{ 'opacity-0 scale-95': !isModalOpen, 'opacity-100 scale-100': isModalOpen }"
+          :class="{
+            'opacity-0 scale-95': !isModalOpen,
+            'opacity-100 scale-100': isModalOpen,
+          }"
         >
           <!-- Modal Content -->
           <div class="p-6">
@@ -201,6 +218,9 @@ onMounted(() => {
           </div>
         </div>
       </div>
+    </div>
+    <div class="mt-10 cursor-pointer">
+      <a class="text-primary-600 dark:text-primary-400 font-semibold hover:underline" href="https://github.com/radiant-O" target="_blank" rel="noopener noreferrer">View Github Projects >>></a>
     </div>
   </div>
 </template>

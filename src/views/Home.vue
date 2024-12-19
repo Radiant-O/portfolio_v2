@@ -14,7 +14,7 @@
     <section class="hero-section min-h-screen flex items-center justify-center px-4">
       <div class="text-center">
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-          Hi, I'm <span class="text-primary-600 dark:text-primary-400">Radiant</span>
+          Hi, I'm <span class="text-primary-600 dark:text-primary-400">ABIODUN BUKOYE</span>
         </h1>
         <!-- <div class="text-2xl sm:text-3xl lg:text-4xl text-gray-600 dark:text-gray-300 mb-8">
       <span>An </span>
@@ -24,7 +24,7 @@
       <span> crafting intelligent solutions and automated systems</span>
     </div> -->
         <p class="text-xl sm:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-          <span>An </span>
+          <span>A </span>
       <span class="text-primary-600 dark:text-primary-400 font-semibold">
         <span class="typing-text"></span>
       </span>
@@ -105,9 +105,9 @@ const iconClasses = [
 ]
 
 const roles = [
-  'Software Engineer',
-  'Frontend Developer',
-  'AI Automation Expert'
+  'FullStack Developer',
+  'AI Automation Expert',
+  'Technical Writer'
 ]
 
 const backgroundIcons = ref([])
@@ -122,23 +122,23 @@ const generateIcons = () => {
 }
 
 const skills = ref([
-  {
-    title: 'AI Development',
-    description: 'Building cutting-edge AI solutions and intelligent systems that transform business operations.',
-    icon: 'fas fa-brain fa-bounce',
-    technologies: ['TensorFlow', 'PyTorch', 'OpenAI', 'Neural Networks']
+{
+    title: 'Software Development',
+    description: 'Building modern, responsive web applications with cutting-edge technologies and best practices for optimal user experience.',
+    icon: 'fas fa-laptop-code fa-bounce',
+    technologies: ['Vuejs', 'Reactjs', 'ReactNative', 'Expo', 'Nuxtjs', 'Nodejs', 'Python', 'MongoDB', 'Azure', 'Gsap', 'Tailwindcss', 'Vuetify']
   },
   {
-    title: 'Automation',
-    description: 'Creating sophisticated automation systems that streamline workflows and boost efficiency.',
+    title: 'AI Automation',
+    description: 'Creating sophisticated AI automation systems that streamline workflows and boost efficiency with chatbot and Voice Assistants.',
     icon: 'fas fa-robot fa-beat',
-    technologies: ['Python', 'Node.js', 'RPA', 'Process Automation']
+    technologies: ['Make.com', 'Vapi', 'VoiceFlow', 'Retell', 'Zapier', 'n8n', 'Python', 'OpenAI']
   },
   {
-    title: 'ML Integration',
-    description: 'Seamlessly integrating machine learning models into scalable applications.',
-    icon: 'fas fa-microchip fa-pulse',
-    technologies: ['Scikit-learn', 'Deep Learning', 'API Integration', 'MLOps']
+    title: 'Technical Writing',
+    description: 'Crafting clear, comprehensive technical documentation, tutorials, and articles that make complex topics accessible.',
+    icon: 'fas fa-pen-fancy fa-bounce',
+    technologies: ['Notion', 'Grammarly', 'Google Docs', 'Markdown', 'Dev.to', 'Medium', 'HashNode']
   }
 ])
 
