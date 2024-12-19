@@ -110,11 +110,11 @@ onMounted(() => {
                   Get in Touch
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="https://docs.google.com/document/d/1McwzuStWtw06o4YcFdXELC2Oph9z69XHuHcmhMJrfr0/edit?usp=sharing"
                   target="_blank"
                   class="w-full sm:w-auto px-6 py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-400 dark:hover:text-gray-900 rounded-lg transition-colors duration-200 text-center"
                 >
-                  Download CV
+                  View CV
                 </a>
               </div>
             </div>
