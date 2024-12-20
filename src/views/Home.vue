@@ -105,7 +105,7 @@ const iconClasses = [
 ]
 
 const roles = [
-  'FullStack Developer',
+  'Frontend Developer',
   'AI Automation Expert',
   'Technical Writer'
 ]
@@ -123,7 +123,7 @@ const generateIcons = () => {
 
 const skills = ref([
 {
-    title: 'Software Development',
+    title: 'Frontend Development',
     description: 'Building modern, responsive web applications with cutting-edge technologies and best practices for optimal user experience.',
     icon: 'fas fa-laptop-code fa-bounce',
     technologies: ['Vuejs', 'Reactjs', 'ReactNative', 'Expo', 'Nuxtjs', 'Nodejs', 'Python', 'MongoDB', 'Azure', 'Gsap', 'Tailwindcss', 'Vuetify']

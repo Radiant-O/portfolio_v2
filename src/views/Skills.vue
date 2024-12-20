@@ -95,7 +95,7 @@ const skillCategories = ref([
       { name: 'VoiceFlow', icon: 'fas fa-comment-dots' },
       { name: 'Retell', icon: 'fas fa-headset' },
       { name: 'Zapier', icon: 'fas fa-bolt' },
-      // { name: 'n8n', icon: 'fas fa-network-wired' },
+      { name: 'n8n', icon: 'fas fa-network-wired' },
       { name: 'OpenAI', icon: 'fas fa-brain' }
     ]
   },
@@ -117,7 +117,6 @@ const skillCategories = ref([
     skills: [
       { name: 'Notion', icon: 'fas fa-book-open' },
       { name: 'Markdown', icon: 'fab fa-markdown' },
-      { name: 'Dev.to', icon: 'fab fa-dev' },
       { name: 'Medium', icon: 'fab fa-medium' },
       { name: 'HashNode', icon: 'fas fa-hashtag' },
       { name: 'Google Docs', icon: 'fas fa-file-alt' }
