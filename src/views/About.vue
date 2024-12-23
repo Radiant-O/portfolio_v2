@@ -120,7 +120,7 @@ onMounted(() => {
             </div>
             <div class="profile-image">
               <img
-                src="https://res.cloudinary.com/din5vdwsr/image/upload/v1734551944/radiant_olfitu.png"
+                src="https://res.cloudinary.com/din5vdwsr/image/upload/v1734964747/IMG_1947_gjrk8r.jpg"
                 alt="Profile"
                 class="w-full h-[500px] object-cover rounded-lg shadow-xl mt-10"
               />
