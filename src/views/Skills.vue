@@ -61,7 +61,7 @@ import AnimatedBackground from '../components/AnimatedBackground.vue'
 
 const skillCategories = ref([
   {
-    title: 'Frontend Development',
+    title: 'Software Development',
     icon: 'fas fa-laptop-code',
     skills: [
       { name: 'Vue.js', icon: 'fab fa-vuejs' },
