@@ -130,10 +130,10 @@ const skills = ref([
     technologies: ['Vuejs', 'Reactjs', 'ReactNative', 'Expo', 'Nuxtjs', 'Nodejs', 'Python', 'MongoDB', 'Azure', 'Gsap', 'Tailwindcss', 'Vuetify']
   },
   {
-    title: 'AI Automation',
+    title: 'AI/ ML',
     description: 'Creating sophisticated AI automation systems that streamline workflows and boost efficiency with chatbot and Voice Assistants.',
     icon: 'fas fa-robot fa-beat',
-    technologies: ['Make.com', 'Vapi', 'VoiceFlow', 'Retell', 'Zapier', 'n8n', 'Python', 'OpenAI']
+    technologies: ['Make.com', 'Vapi', 'VoiceFlow', 'Retell', 'Zapier', 'n8n', 'Python', 'OpenAI', "livekit", 'SyncFLow', 'Twillo' ]
   },
   {
     title: 'Technical Writing',
